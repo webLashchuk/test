@@ -1,25 +1,93 @@
 /* eslint-disable linebreak-style */
+/* Задание на урок:
+
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+
+P.S. Функции вызывать не обязательно*/
+
 'use strict';
 
-const str = 'teSt';
+// Код возьмите из предыдущего домашнего задания
 
-console.log(str.toUpperCase());
-console.log(str.toLowerCase());
-console.log(str);
-const fruit = 'Some fruit';
+let numberOfFilms;
 
-console.log(fruit.indexOf('fruit'));
+function start() {
+	numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const logg = 'Hello world';
+	while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+		numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+	}
+}
 
-console.log(logg.slice(6, 11));
+start();
 
-console.log(logg.substring(6, 11));
+	
+const personalMovieDB = {
+	count: numberOfFilms,
+	movies: {
+		'logan': '8.1',
+	},
+	actors: {},
+	genres: [],
+	privat: false
+};
 
-console.log(logg.substr(6, 5));
+function detectPersonalLevel() {
+	if (personalMovieDB.count < 10) {
+		alert('Просмотрено довольно мало фильмов');
+	} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+		alert('Вы классический зритель');
+	} else if (personalMovieDB.count >= 30) {
+		alert('Вы киноман');
+	} 
+}
 
-const num = 12.5; 
-console.log(Math.round(num));
+// detectPersonalLevel();
 
-const test = '12.2px';
-console.log(parseFloat(test));
+function rememberMyFilms() {
+	for (let i = 0; i < 2; i++) {
+		const a = prompt('Один из последних просмотренных фильмов?', ''),
+			b = prompt('На сколько оцените его?', ''); 
+		if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+			personalMovieDB.movies[a] = b;
+			console.log('Done');
+		}  else {
+			console.log('Ошибка! Вы не ввели данные!');
+			i--;
+		}
+	} 
+}
+
+// rememberMyFilms();
+
+let showMyDB = (hidden) => {
+	if (!hidden)
+		return console.log(personalMovieDB);
+};
+
+showMyDB(personalMovieDB.privat);
+
+function writeYourGenres() {
+	for (let i = 1; i <= 3; i++) {
+		// while (c == '' || c == null || c.length > 50 || undefined) {
+		// 	personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}?`, '');
+		// }
+		personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}?`, '');
+	}
+}
+
+writeYourGenres();
+
+
+    
+            
+
+	
+	
