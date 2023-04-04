@@ -95,45 +95,28 @@
 
 // const newObj = {...q};
 
-const personalPlanPeter = {
-	name: 'Peter',
-	age: '29',
-	skills: {
-		languages: ['ru', 'eng'],
-		programmingLangs: {
-			js: '20%',
-			php: '10%'
-		},
-		exp: '1 month'
-	},
-	showAgeAndLangs: function(plan) {
-		let landStr = '';
-		const age = plan.age;
-		let lang = plan.skills.languages;
-		lang.forEach(function(item) {
-			landStr += ` ${item.toUpperCase()}`;
-		});
-		return console.log(`Мне ${age} и я владею языками:${landStr}`);
-	}
-};
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
 
-personalPlanPeter.showAgeAndLangs(personalPlanPeter);
-
-function showExperience(plan) {
-	const exp = plan.skills.exp; //деструктуризация;
-	return console.log(exp);
-}
-
-showExperience(personalPlanPeter);
-
-function showProgrammingLangs(plan) {
-	const {programmingLangs} = plan.skills; //фигурные скобки это важно;
+function showFamily(arr) {
 	let str = '';
-
-	for (let key in programmingLangs) {
-		str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
-	} 
-	return console.log(str);
+	if(arr.length <= 0) {
+		return console.log('Семья пуста');
+	} else {
+		arr.forEach(function(item) {
+			str += ` ${item}`;
+		});
+		return console.log(`Семья состоит из:${str}`);
+	}
 }
 
-showProgrammingLangs(personalPlanPeter);
+showFamily(family);
+
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+function standardizeStrings(arr) {
+	for (let value of arr) {
+		console.log(value.toLowerCase());
+	}
+}
+
+standardizeStrings(favoriteCities);
