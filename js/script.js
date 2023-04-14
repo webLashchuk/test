@@ -1,26 +1,50 @@
 /* eslint-disable linebreak-style */
 'use strict';
 
-const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+// To string
 
-function sortStudentsByGroups(arr) {
-	arr.sort();
-	let a = [], b = [], c = [], rest = []; 
-	for (let i = 0; i <= arr.length; i++) {
-		if (i < 3) {
-			a.push(arr[i]);
-		} else if (i < 6) {
-			b.push(arr[i]);
-		} else if (i < 9) {
-			c.push(arr[i]);
-		} else {
-			rest.push(arr[i]);
-		}
-	}
-	return console.log(a, b,  c, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}`);
-	
+//1)
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+
+//2)
+console.log(typeof(5 + ''));
+
+const num = 5;
+console.log('https://vk.com/catalog/' + num);
+
+const fontSize = 26 + 'px';
+
+//To number
+
+
+//1)
+console.log(typeof(Number('4')));
+
+//2)
+console.log(typeof(+'5'));
+
+//3)
+console.log(typeof(parseInt('15px', 10)));
+
+// let answ = +prompt('Hello', '');
+
+//To Boolean
+//0, '', null, undefined, NaN;
+
+//1)
+let switcher = null;
+
+if (switcher) {
+	console.log('Working...');
 }
 
-sortStudentsByGroups(students);
+switcher = 1;
 
-// КОГДА ПРИДЕШЬ ПОПРОБУЙ ЧЕРЕЗ SPREAD ОПЕРАТОР (СМОТРИ В ЗАПИСЯХ)
+if (switcher) {
+	console.log('Working...');
+}
+
+console.log(typeof(Boolean('4')));
+
+console.log(typeof(!!'44444'));
