@@ -1,50 +1,39 @@
 /* eslint-disable linebreak-style */
 'use strict';
 
-// To string
+// let number = 5; debugger;
 
-//1)
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// function logNumber() {
+// 	// let number = 4; debugger;
+// 	console.log(number);
+// }
 
-//2)
-console.log(typeof(5 + ''));
+// number = 6;
+// logNumber();debugger;
 
-const num = 5;
-console.log('https://vk.com/catalog/' + num);
+// function createCounter() {
+// 	let counter = 0;
 
-const fontSize = 26 + 'px';
+// 	const myFunction = function() {
+// 		counter = counter + 1;
+// 		return counter;
+// 	};
+	
+// 	return myFunction;
+// }
 
-//To number
+// const increment = createCounter();
 
+// const c1 = increment();
+// const c2 = increment();
+// const c3 = increment();
 
-//1)
-console.log(typeof(Number('4')));
+// console.log(c1, c2, c3);
 
-//2)
-console.log(typeof(+'5'));
+for (let i = 0; i < 9; i++) {
+	for (let j = 0; j < 9; j++) {
+		let num = 3;
+	}
 
-//3)
-console.log(typeof(parseInt('15px', 10)));
-
-// let answ = +prompt('Hello', '');
-
-//To Boolean
-//0, '', null, undefined, NaN;
-
-//1)
-let switcher = null;
-
-if (switcher) {
-	console.log('Working...');
+	console.log(num);
 }
-
-switcher = 1;
-
-if (switcher) {
-	console.log('Working...');
-}
-
-console.log(typeof(Boolean('4')));
-
-console.log(typeof(!!'44444'));
